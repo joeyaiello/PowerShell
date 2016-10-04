@@ -2,6 +2,7 @@ node {
   // JenkinsFile Groovy-based PipeLine workflow for Jenkins-CI
   // Documentation:  https://jenkins.io/doc/pipeline/
   
+  
 	stage('Checkout'){
 		checkout scm
   }
