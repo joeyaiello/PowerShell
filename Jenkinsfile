@@ -11,7 +11,7 @@ node {
 	}	
   stage('SpinUpContainer'){
 	  bat 'docker create -i --name PoshCore_%BUILD_ID% -h PoshCore microsoft/windowsservercore:10.0.14300.1030 cmd'
-	  bat 'docker cp "C:\\Program Files\\PowerShell" ${env.BUILD_ID}:"C:\\PowerShell"'
+	  bat 'docker cp "C:\\Program Files\\PowerShell" PoshCore_%BUILD_ID%:"C:\\PowerShell"'
 	  bat 'docker cp "%WORKSPACE%\\Tools" PoshCore_%BUILD_ID%:"C:\\PowerShell\\Tools"'
 	  bat 'docker cp "%WORKSPACE%\\Test" PoshCore_%BUILD_ID%:"C:\\PowerShell\\Test"'
 	  bat 'docker start PoshCore_%BUILD_ID%'
